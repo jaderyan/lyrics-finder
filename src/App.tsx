@@ -22,9 +22,13 @@ const InnerContainer = styled.div`
   box-shadow: 0px 0px 1px 0px #000000;
   padding: ${rem("20px")};
 
-  @media (max-width: 640px) {
+  @media (max-width: 768px) {
     margin-top: ${rem("24px")};
     width: 80%;
+  }
+
+  @media (max-width: 570px) {
+    padding: ${rem("16px")};
   }
 `;
 
