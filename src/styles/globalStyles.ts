@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import background from "../assets/wavy-dots.png";
+import background from "../assets/memphis-colorful.png";
 
 export const GlobalStyle = createGlobalStyle`
   body {
