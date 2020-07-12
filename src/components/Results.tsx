@@ -72,6 +72,11 @@ const Results: FunctionComponent = () => {
   const [open, modalOpen] = useState(false);
   const [title, setTitle] = useState("");
 
+  const controlModal = (title?: string) => {
+    modalOpen(!open);
+    setTitle(title ? title : "");
+  };
+
   return (
     <Container>
       {store?.loading && <Loading />}
@@ -81,8 +86,7 @@ const Results: FunctionComponent = () => {
           <SongButton
             song={recording}
             openModal={() => {
-              modalOpen(!open);
-              setTitle(recording.title);
+              controlModal(recording.title);
             }}
           />
         ))}
@@ -96,8 +100,7 @@ const Results: FunctionComponent = () => {
       <Modal
         isOpen={open}
         onRequestClose={() => {
-          modalOpen(!open);
-          setTitle("");
+          controlModal();
         }}
         contentLabel="Example Modal"
         style={customStyles}
@@ -105,8 +108,7 @@ const Results: FunctionComponent = () => {
         <Fragment>
           <ButtonContainer
             onClick={() => {
-              modalOpen(!open);
-              setTitle("");
+              controlModal();
             }}
           >
             <CloseButton>X</CloseButton>
