@@ -21,6 +21,8 @@ const Button = styled.button`
   margin-left: ${rem("16px")};
   font-size: ${rem("16px")};
   border-radius: 3px;
+  font-family: "Open Sans", sans-serif;
+  cursor: pointer;
 
   @media (max-width: 570px) {
     margin-left: ${rem("8px")};
@@ -29,6 +31,7 @@ const Button = styled.button`
 
 const Input = styled.input`
   padding: ${rem("8px")};
+  font-family: "Open Sans", sans-serif;
 
   @media (min-width: 768px) {
     width: 40%;
