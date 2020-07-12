@@ -102,7 +102,7 @@ const Results: FunctionComponent = () => {
         onRequestClose={() => {
           controlModal();
         }}
-        contentLabel="Example Modal"
+        contentLabel="Lyrics"
         style={customStyles}
       >
         <Fragment>
