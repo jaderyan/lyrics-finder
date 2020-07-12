@@ -45,3 +45,5 @@ The app is supported across all modern browsers. It is not supported on IE11 dow
 Given more time I would have liked to fully test my solution.
 
 I would have also implemented pagination (at the moment search results are limited to the first 100).
+
+Adding routing to the app so lyrics show on a different page rather than a modal.
