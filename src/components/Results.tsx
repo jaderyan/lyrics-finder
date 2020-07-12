@@ -46,6 +46,12 @@ const CloseButton = styled.button`
   background: none;
 `;
 
+const Error = styled.div`
+  display: flex;
+  justify-content: center;
+  flex: 1;
+`;
+
 const customStyles = {
   content: {
     top: "50%",
@@ -56,6 +62,8 @@ const customStyles = {
     transform: "translate(-50%, -50%)",
     height: "80%",
     "overflow-y": "auto",
+    width: "calc(100vw - 75px)",
+    maxWidth: "400px",
   },
 };
 
@@ -79,7 +87,11 @@ const Results: FunctionComponent = () => {
           />
         ))}
 
-      {!!store?.error && <p>{store.error}</p>}
+      {!!store?.error && (
+        <Error>
+          <p>{store.error}</p>
+        </Error>
+      )}
 
       <Modal
         isOpen={open}

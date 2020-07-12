@@ -26,6 +26,7 @@ const Button = styled.button`
 
   @media (max-width: 570px) {
     margin-left: ${rem("8px")};
+    padding: ${rem("8px")};
   }
 `;
 
