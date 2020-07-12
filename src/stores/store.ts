@@ -13,6 +13,7 @@ export class ArtistStore {
   @observable recordings: IRecording[] = [];
   @observable lyrics: string = "";
   @observable loading: boolean = false;
+  @observable error: string | null = null;
 
   @action
   onSearchChange = (text: string) => {
@@ -23,6 +24,7 @@ export class ArtistStore {
   onSubmit = async () => {
     this.recordings = [];
     this.loading = true;
+    this.error = null;
 
     try {
       const {
@@ -46,7 +48,8 @@ export class ArtistStore {
 
       this.loading = false;
     } catch (error) {
-      console.log(error);
+      this.loading = false;
+      this.error = "Unable to find artist please try again.";
     }
   };
 
@@ -102,6 +105,10 @@ export class ArtistStore {
     }
 
     this.recordings = songsWithLyrics;
+
+    if (!songsWithLyrics.length) {
+      this.error = "No songs available with lyrics";
+    }
   };
 
   findLyrics = (title: string) => {

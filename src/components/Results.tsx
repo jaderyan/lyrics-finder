@@ -79,6 +79,8 @@ const Results: FunctionComponent = () => {
           />
         ))}
 
+      {!!store?.error && <p>{store.error}</p>}
+
       <Modal
         isOpen={open}
         onRequestClose={() => {
