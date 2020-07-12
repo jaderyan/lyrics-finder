@@ -65,7 +65,7 @@ export class ArtistStore {
         !recording.title.includes("(live)")
     );
 
-    songs.map((recording: IRecording) => {
+    songs.forEach((recording: IRecording) => {
       if (
         filteredRecordings.find(
           (record) =>
