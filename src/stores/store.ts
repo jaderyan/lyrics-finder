@@ -26,11 +26,18 @@ export class ArtistStore {
     this.loading = true;
     this.error = null;
 
+    const config = {
+      headers: {
+        "User-Agent": "lyrics-finder (jadeelizabethryan@outlook.com)",
+      },
+    };
+
     try {
       const {
         data: { artists },
       } = await axios.get(
-        `${MB_BASE_URL}/artist?query=${this.search}&fmt=json`
+        `${MB_BASE_URL}/artist?query=${this.search}&fmt=json`,
+        config
       );
 
       this.artistName = get(artists, "[0].name");
@@ -39,7 +46,8 @@ export class ArtistStore {
       const {
         data: { recordings },
       } = await axios.get(
-        `${MB_BASE_URL}/recording?artist=${id}&offset=0&limit=100&fmt=json`
+        `${MB_BASE_URL}/recording?artist=${id}&offset=0&limit=100&fmt=json`,
+        config
       );
 
       const filteredRecordings = this.removeDuplicates(recordings);
