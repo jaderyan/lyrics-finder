@@ -10,6 +10,7 @@ interface IProps {
 
 const Button = styled.button`
   color: #1b1b1b;
+  font-size: ${rem("14px")};
   border: none;
   padding: ${rem("16px")};
   margin: ${rem("8px")};
